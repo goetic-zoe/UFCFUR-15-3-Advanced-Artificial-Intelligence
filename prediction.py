@@ -83,7 +83,7 @@ def predict_singular(image_location, model_dir):
         "produce_type": produce_type,
         "freshness_label": freshness_label,
         "predicted_class": predicted_class,
-        "confidence": round(predicted_confidence, 3),
+        "confidence": round(predicted_confidence, 4),
         "colour_score": round(quality_score["colour_score"], 3),
         "size_score": round(quality_score["size_score"], 3),
         "ripeness_score": round(quality_score["ripeness_score"], 3),
@@ -96,5 +96,15 @@ parser.add_argument('filename', nargs='+')
 parser.add_argument('-m', '--model', type=str, required=True)
 args = parser.parse_args()
 image_path = args.filename[0]
-print(predict_singular(image_path, args.model))
+predicted = predict_singular(image_path, args.model)
+print(
+    "Produce Type: " + str(predicted["produce_type"]),
+    "\nFreshness Label: " + str(predicted["freshness_label"]),
+    "\nPredicted Class: " + str(predicted["predicted_class"]),
+    "\nConfidence: " + str(predicted["confidence"]),
+    "\nColour score: " + str(predicted["colour_score"]),
+    "\nSize score: " + str(predicted["size_score"]),
+    "\nRipeness score: " + str(predicted["ripeness_score"]),
+    "\nGrade: " + str(predicted["grade"])
+)
 
