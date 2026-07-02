@@ -20,6 +20,14 @@ pip install -r requirements.txt
 ```
 
 ### Running
+#### Single Command
+```bash
+python prediction.py -m models/trained_fruit_cnn.keras <path-to-file>
+```
+``-m/--models`` can be used to point towards a different model using the same classes. To see the relevant classes open
+``prediction.py`` in your editor and find variable ``dataset_classes``
+
+#### Building CNN
 From within the UFCFUR-15-3-Advanced-Artificial-Intelligence directory.
 ```bash
 cd notebooks
