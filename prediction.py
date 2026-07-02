@@ -31,8 +31,36 @@ def predict_singular(image_location, model_dir):
         else:
             return "C"
 
-    dataset_classes = get_class_names("dataset")
-    loaded_model = tf.keras.models.load_model(model_dir)
+    dataset_classes = [
+        "Apple__Healthy",
+        "Apple__Rotten",
+        "Banana__Healthy",
+        "Banana__Rotten",
+        "Bellpepper__Healthy",
+        "Bellpepper__Rotten",
+        "Carrot__Healthy",
+        "Carrot__Rotten",
+        "Cucumber__Healthy",
+        "Cucumber__Rotten",
+        "Grape__Healthy",
+        "Grape__Rotten",
+        "Guava__Healthy",
+        "Guava__Rotten",
+        "Jujube__Healthy",
+        "Jujube__Rotten",
+        "Mango__Healthy",
+        "Mango__Rotten",
+        "Orange__Healthy",
+        "Orange__Rotten",
+        "Pomegranate__Healthy",
+        "Pomegranate__Rotten",
+        "Potato__Healthy",
+        "Potato__Rotten",
+        "Strawberry__Healthy",
+        "Strawberry__Rotten",
+        "Tomato__Healthy",
+        "Tomato__Rotten",
+    ]
 
     image = tf.io.read_file(image_location)
     image = tf.image.decode_image(image, channels=3, expand_animations=False)
@@ -41,6 +69,8 @@ def predict_singular(image_location, model_dir):
     image = tf.cast(image, tf.float32) / 255.0
     image_arr = tf.keras.utils.img_to_array(image)
     image_arr = np.expand_dims(image_arr, axis=0)
+
+    loaded_model = tf.keras.models.load_model(model_dir)
 
     prediction = loaded_model.predict(image_arr)
     prediction_index = np.argmax(prediction[0])
