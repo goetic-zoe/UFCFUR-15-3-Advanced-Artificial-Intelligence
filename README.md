@@ -11,6 +11,11 @@ assessing the quality of fruits and vegetables.
 - Python 3.12.13
 - Jupyter Notebook and/or JupyterLab
 
+#### Storage Space
+This repository uses Git LFS to store a model trained using the jupyter notebook in this repo which is downloaded to be used as a default model for predictions
+because of that it requires **~200MB of Storage Space** or you can train your own model by following the '**Building CNN**'
+instructions in this README which requires **~5-6GB** for the dataset.  
+
 ### Installation
 
 ```bash
@@ -24,7 +29,8 @@ pip install -r requirements.txt
 ```bash
 python prediction.py -m models/trained_fruit_cnn.keras <path-to-image>
 ```
-``-m/--models`` can be used to point towards a different model using the same classes. To see the relevant classes open
+``-m/--models`` can be used to point towards a different model using the same classes just replace ``models/trained_fruit_cnn.keras``
+with your own model. To see the relevant classes open
 ``prediction.py`` in your editor and find variable ``dataset_classes``
 
 #### Building CNN
