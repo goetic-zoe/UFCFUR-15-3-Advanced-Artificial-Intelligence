@@ -2,3 +2,5 @@
 /dataset/Fruit And Vegetable Diseases Dataset
 /.idea
 /.venv
+/dataset/archive2.zip
+/models/fruit_cnn.keras
