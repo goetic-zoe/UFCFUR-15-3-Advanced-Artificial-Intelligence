@@ -41,5 +41,7 @@ jupyter notebook Fruit_CNN.ipynb
 ```
 
 ## Github LFS
-This repo exceeds Github max file size limiters and therefore to push to Github it requires use of the Github LFS for
-more information on Git LFS visit: https://git-lfs.com/
+This repo exceeds Github max file size limiters and therefore to **push** to Github it requires use of the Github LFS for
+more information on Git LFS visit: https://git-lfs.com/.
+
+For Git LFS there is a preprovided ``.gitattributes`` file which automatically flags the correct files for LFS.
