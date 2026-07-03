@@ -18,7 +18,7 @@ because of that it requires **~200MB of Storage Space** or you can train your ow
 instructions in this README which requires **~5-6GB** for the dataset.  
 
 ### Github LFS
-This repo exceeds Github max file size limiters and therefore it requires use of the Github LFS to pull the pre-trained model, either setup LFS of follow the '**Building CNN**' instructions.
+This repo exceeds Github max file size limiters and therefore it requires use of the Github LFS to pull the pre-trained model, either setup LFS or follow the '**Building CNN**' instructions.
 For more information on Git LFS visit: https://git-lfs.com/. For Git LFS there is a preprovided ``.gitattributes`` file which automatically flags the correct files for LFS when pushing.
 
 #### LFS first time setup
