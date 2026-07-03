@@ -27,7 +27,7 @@ For more information on Git LFS visit: https://git-lfs.com/. For Git LFS there i
 
 You can now pull (and push) the full contents of this repo.
 
-If you're having issues with installing Git LFS I recommend the Github guide: https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage
+If you're having issues with installing Git LFS I recommend the Github guide on the topic: https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage
 
 ### Installation
 
