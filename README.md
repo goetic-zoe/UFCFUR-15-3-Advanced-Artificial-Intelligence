@@ -10,11 +10,21 @@ assessing the quality of fruits and vegetables.
 ### Prerequisites
 - Python 3.12.13
 - Jupyter Notebook and/or JupyterLab
+- Git LFS
 
 #### Storage Space
 This repository uses Git LFS to store a model trained using the jupyter notebook in this repo which is downloaded to be used as a default model for predictions
 because of that it requires **~200MB of Storage Space** or you can train your own model by following the '**Building CNN**'
 instructions in this README which requires **~5-6GB** for the dataset.  
+
+## Github LFS
+This repo exceeds Github max file size limiters and therefore it requires use of the Github LFS to pull the pre-trained model, either setup LFS of follow the '**Building CNN**' instructions.
+For more information on Git LFS visit: https://git-lfs.com/. For Git LFS there is a preprovided ``.gitattributes`` file which automatically flags the correct files for LFS when pushing.
+
+### LFS first time setup
+- Download Git LFS from your package manager (pacman, apt, etc) or from https://git-lfs.com/
+- run ``git lfs install``
+You can now pull (and push) the full contents of this repo.
 
 ### Installation
 
@@ -39,9 +49,3 @@ From within the UFCFUR-15-3-Advanced-Artificial-Intelligence directory.
 cd notebooks
 jupyter notebook Fruit_CNN.ipynb
 ```
-
-## Github LFS
-This repo exceeds Github max file size limiters and therefore to **push** to Github it requires use of the Github LFS for
-more information on Git LFS visit: https://git-lfs.com/.
-
-For Git LFS there is a preprovided ``.gitattributes`` file which automatically flags the correct files for LFS.
