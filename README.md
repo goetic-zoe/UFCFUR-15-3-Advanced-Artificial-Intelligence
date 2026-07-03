@@ -24,6 +24,7 @@ For more information on Git LFS visit: https://git-lfs.com/. For Git LFS there i
 #### LFS first time setup
 - Download Git LFS from your package manager (pacman, apt, etc) or from https://git-lfs.com/
 - run ``git lfs install``
+
 You can now pull (and push) the full contents of this repo.
 
 ### Installation
