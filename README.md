@@ -10,7 +10,7 @@ assessing the quality of fruits and vegetables.
 ### Prerequisites
 - Python 3.12.13
 - Jupyter Notebook and/or JupyterLab
-- Git LFS (For single command running)
+- Git LFS (for single command running without building CNN manually)
 
 #### Storage Space
 This repository uses Git LFS to store a model trained using the jupyter notebook in this repo which is downloaded to be used as a default model for predictions
