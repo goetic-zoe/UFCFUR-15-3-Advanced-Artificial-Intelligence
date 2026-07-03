@@ -6,6 +6,7 @@ from tensorflow.keras import layers
 
 from notebooks.dataset import get_class_names
 
+
 def predict_singular(image_location, model_dir):
     def quality(_predicted_class, _predicted_confidence):
         predicted_type = 'Healthy' if 'Healthy' in _predicted_class else 'Rotten'
@@ -64,7 +65,7 @@ def predict_singular(image_location, model_dir):
 
     image = tf.io.read_file(image_location)
     image = tf.image.decode_image(image, channels=3, expand_animations=False)
-    image_size = (244,244)
+    image_size = (244, 244)
     image = tf.image.resize(image, image_size)
     image = tf.cast(image, tf.float32) / 255.0
     image_arr = tf.keras.utils.img_to_array(image)
@@ -107,4 +108,3 @@ print(
     "\nRipeness score: " + str(predicted["ripeness_score"]),
     "\nGrade: " + str(predicted["grade"])
 )
-

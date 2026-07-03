@@ -1,5 +1,6 @@
 import os
 
+
 def check_dataset(dataset_root_dir='../dataset'):
     if not os.path.exists(dataset_root_dir + '/Fruit And Vegetable Diseases Dataset'):
         print('Dataset not found, checking directory...')
@@ -13,7 +14,7 @@ def check_dataset(dataset_root_dir='../dataset'):
             endpoint = 'https://s3.fr-par.scw.cloud'
             file_key = 'archive2.zip'
             local_file = dataset_root_dir + '/archive.zip'
-            s3 = boto3.client('s3',endpoint_url=endpoint,config=Config(signature_version=UNSIGNED))
+            s3 = boto3.client('s3', endpoint_url=endpoint, config=Config(signature_version=UNSIGNED))
             s3.download_file(bucket_name, file_key, local_file)
             print('Archive download complete.')
 
@@ -27,6 +28,8 @@ def check_dataset(dataset_root_dir='../dataset'):
         print('Archive removed.')
     print('Dataset found.')
 
+
 def get_class_names(dataset_root_dir):
     check_dataset(dataset_root_dir)
-    return sorted([x for x in os.listdir(dataset_root_dir + '/Fruit And Vegetable Diseases Dataset') if os.path.isdir(os.path.join(dataset_root_dir + '/Fruit And Vegetable Diseases Dataset', x))])
+    return sorted([x for x in os.listdir(dataset_root_dir + '/Fruit And Vegetable Diseases Dataset') if
+                   os.path.isdir(os.path.join(dataset_root_dir + '/Fruit And Vegetable Diseases Dataset', x))])
