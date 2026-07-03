@@ -21,7 +21,7 @@ instructions in this README which requires **~5-6GB** for the dataset.
 This repo exceeds Github max file size limiters and therefore it requires use of the Github LFS to pull the pre-trained model, either setup LFS of follow the '**Building CNN**' instructions.
 For more information on Git LFS visit: https://git-lfs.com/. For Git LFS there is a preprovided ``.gitattributes`` file which automatically flags the correct files for LFS when pushing.
 
-### LFS first time setup
+#### LFS first time setup
 - Download Git LFS from your package manager (pacman, apt, etc) or from https://git-lfs.com/
 - run ``git lfs install``
 You can now pull (and push) the full contents of this repo.
