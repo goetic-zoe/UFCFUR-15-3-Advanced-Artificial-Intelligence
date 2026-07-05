@@ -10,10 +10,11 @@ assessing the quality of fruits and vegetables.
 ### Prerequisites
 - Python 3.12.13
 - Jupyter Notebook and/or JupyterLab
+- Git LFS (Optional, for single command running without building CNN manually)
 
 #### Storage Space
 This repository uses Git LFS to store a model trained using the jupyter notebook in this repo which is downloaded to be used as a default model for predictions
-because of that it requires **~200MB of Storage Space** or you can train your own model by following the '**Building CNN**'
+because of that it requires **~200MB of Storage Space** or you can train your own model by following the '**Building CNN from Jupyter notebook**'
 instructions in this README which requires **~5-6GB** for the dataset.  
 
 ### Installation
@@ -25,23 +26,29 @@ pip install -r requirements.txt
 ```
 
 ### Running
-#### Single Command
-```bash
-python prediction.py -m models/trained_fruit_cnn.keras <path-to-image>
-```
-``-m/--models`` can be used to point towards a different model using the same classes just replace ``models/trained_fruit_cnn.keras``
-with your own model. To see the relevant classes open
-``prediction.py`` in your editor and find variable ``dataset_classes``
-
-#### Building CNN
+#### Building CNN from Jupyter notebook
 From within the UFCFUR-15-3-Advanced-Artificial-Intelligence directory.
 ```bash
 cd notebooks
 jupyter notebook Fruit_CNN.ipynb
 ```
+#### Single Command
+```bash
+python prediction.py -m models/trained_fruit_cnn.keras <path-to-image>
+```
+This can only be used if Git LFS is used.
+``-m/--models`` can be used to point towards a different model using the same classes just replace ``models/trained_fruit_cnn.keras``
+with your own model. To see the relevant classes open
+``prediction.py`` in your editor and find variable ``dataset_classes``
 
-## Github LFS
-This repo exceeds Github max file size limiters and therefore to **push** to Github it requires use of the Github LFS for
-more information on Git LFS visit: https://git-lfs.com/.
+### Github LFS
+This repo exceeds Github max file size limiters and therefore it requires use of the Github LFS to pull the pre-trained model, either setup LFS or follow the '**Building CNN from Jupyter notebook**' instructions.
+For more information on Git LFS visit: https://git-lfs.com/. For Git LFS there is a preprovided ``.gitattributes`` file which automatically flags the correct files for LFS when pushing.
 
-For Git LFS there is a preprovided ``.gitattributes`` file which automatically flags the correct files for LFS.
+#### LFS first time setup
+- Download Git LFS from your package manager (pacman, apt, etc) or from https://git-lfs.com/
+- run ``git lfs install``
+
+You can now pull (and push) the full contents of this repo.
+
+If you're having issues with installing Git LFS I recommend the Github guide on the topic: https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage
