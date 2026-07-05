@@ -91,20 +91,20 @@ def predict_singular(image_location, model_dir):
         "grade": grade
     }
 
-
-parser = argparse.ArgumentParser()
-parser.add_argument('filename', nargs='+')
-parser.add_argument('-m', '--model', type=str, required=True)
-args = parser.parse_args()
-image_path = args.filename[0]
-predicted = predict_singular(image_path, args.model)
-print(
-    "Produce Type: " + str(predicted["produce_type"]),
-    "\nFreshness Label: " + str(predicted["freshness_label"]),
-    "\nPredicted Class: " + str(predicted["predicted_class"]),
-    "\nConfidence: " + str(predicted["confidence"]),
-    "\nColour score: " + str(predicted["colour_score"]),
-    "\nSize score: " + str(predicted["size_score"]),
-    "\nRipeness score: " + str(predicted["ripeness_score"]),
-    "\nGrade: " + str(predicted["grade"])
-)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('filename', nargs='+')
+    parser.add_argument('-m', '--model', type=str, required=True)
+    args = parser.parse_args()
+    image_path = args.filename[0]
+    predicted = predict_singular(image_path, args.model)
+    print(
+        "Produce Type: " + str(predicted["produce_type"]),
+        "\nFreshness Label: " + str(predicted["freshness_label"]),
+        "\nPredicted Class: " + str(predicted["predicted_class"]),
+        "\nConfidence: " + str(predicted["confidence"]),
+        "\nColour score: " + str(predicted["colour_score"]),
+        "\nSize score: " + str(predicted["size_score"]),
+        "\nRipeness score: " + str(predicted["ripeness_score"]),
+        "\nGrade: " + str(predicted["grade"])
+    )
